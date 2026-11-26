@@ -16,7 +16,7 @@ def convert_all(path, silent=False,):
     count = 0
     invalid_urls = []
     for filename in [os.path.join(dp, f) for dp, dn, filenames in os.walk(path) for f in filenames]:
-        if filename.endswith('.webloc'):
+        if filename.endswith('.webloc') and not os.path.basename(filename).startswith('._'):
             # if validate:
             #     with open(filename) as f:
             #         url = extract_url(f.read())
